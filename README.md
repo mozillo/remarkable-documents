@@ -30,3 +30,5 @@ iOS safari/老版本的安卓原装浏览器不支持fetch,要改用whatwg-fetch
 ##Mac开发工具
 ###Rest Client
 insomnia: https://insomnia.rest/
+###软件包管理
+Cakebrew: The Mac App for Homebrew. https://www.cakebrew.com/
