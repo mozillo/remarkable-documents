@@ -32,3 +32,7 @@ iOS safari/老版本的安卓原装浏览器不支持fetch,要改用whatwg-fetch
 insomnia: https://insomnia.rest/
 ###软件包管理
 Cakebrew: The Mac App for Homebrew. https://www.cakebrew.com/
+
+
+##社区
+独立精神indienova: http://indienova.com/
