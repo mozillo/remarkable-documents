@@ -2,6 +2,9 @@ import React from 'react';
 import {
 	View,
 	Text,
+	Alert,
+	Clipboard,
+	TouchableOpacity,
 	StyleSheet,
 } from 'react-native';
 
@@ -44,9 +47,9 @@ function renderData (obj, key, deep) {
 	if(typeof obj === 'object') {
 		return (
 			<View key={key} style={styles.block}>
-				<View key={key} style={styles.row}>
+				<TouchableOpacity onPress={()=>{Clipboard.setString(key); Alert.alert(`Copy key: ${key}`);}} style={styles.row}>
 					<Text style={styles.content}>-{key}</Text>
-				</View>
+				</TouchableOpacity>
 				<View style={{ paddingLeft: deep * 10}}>
 					{ Object.keys(obj).map(okey => renderData(obj[okey], okey, deep+1)) }
 				</View>
@@ -55,8 +58,12 @@ function renderData (obj, key, deep) {
 	} else {
 		return (
 			<View key={key} style={[styles.row, styles.block]}>
-				<Text style={styles.keys}>-{ key }</Text> 
-				<Text style={styles.values}>{ obj } </Text>
+				<TouchableOpacity onPress={()=>{Clipboard.setString(key); Alert.alert(`Copy key: ${key}`);}} style={styles.keys}>
+					<Text>-{ key }</Text> 
+				</TouchableOpacity>
+				<TouchableOpacity onPress={()=>{Clipboard.setString(obj); Alert.alert(`Copy value: ${obj}`);}} style={styles.values}>
+					<Text>{ obj } </Text>
+				</TouchableOpacity>
 			</View>
 		);
 	}
